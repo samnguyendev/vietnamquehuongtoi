@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vietnamquehuongtoi</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <input type="checkbox" id="darkmode-toggle" />
+    <label for="darkmode-toggle">
+
+    </label>
+
+    <div id="background" class="fade-background" bis_skin_checked="1"></div>
+
+    <header class="header">
+        <a href="#" class="logo">TravelTO2</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1 class="main-title">VIETNAM</h1>
+        <div class="box">
+            <input type="checkbox" id="check" />
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Vi vu Việt Nam..." list="input" />
+                <ul class="suggestions" id="suggestions-list">
+                    <li data-page="./vinh-ha-long.html">Vịnh Hạ Long</li>
+                    <li data-page="./van-mieu-quoc-tu-giam.html">Văn Miếu-Quốc Tử Giám</li>
+                    <li data-page="./nha-trang.html">Nha Trang</li>
+                    <li data-page="./tay-bac.html">Tây Bắc</li>
+                    <li data-page="./phu-quoc.html">Phú Quốc</li>
+                    <li data-page="./hue.html">Huế</li>
+                    <li data-page="./da-nang.html">Đà Nẵng</li>
+                    <li data-page="./sapa.html">Sapa</li>
+                    <li data-page="./hoi-an.html">Hội An</li>
+                    <li data-page="./cho-ben-thanh.html">Chợ Bến Thành (TP.HCM)</li>
+                    <li data-page="./chua-mot-cot.html">Chùa Một Cột (Hà Nội)</li>
+                </ul>
+                <label for="check" class="icon">
+                    <i class="fa-solid fa-plane"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('darkmode-toggle');
+            const background = document.getElementById('background');
+
+            toggle.addEventListener('change', function () {
+                console.log('Checkbox state:', this.checked);
+
+                background.classList.add('fade-out');
+
+                setTimeout(function () {
+                    if (toggle.checked) {
+                        background.style.backgroundImage = "url('./image/homepage_img2.jpg')";
+                    } else {
+                        background.style.backgroundImage = "url('./image/homepage_img1.jpg')";
+                    }
+
+                    background.classList.remove('fade-out');
+                    background.classList.add('fade-in');
+                }, 300);
+            });
+
+
+            const suggestions = document.getElementById("suggestions-list");
+            const items = suggestions.querySelectorAll("li");
+            items.forEach((item) => {
+                item.addEventListener("click", function () {
+                    // Lấy giá trị của thuộc tính data-page
+                    const page = this.getAttribute("data-page");
+                    console.log("Redirecting to: " + page); // Kiểm tra tên trang
+
+                    // Chuyển hướng đến trang tương ứng
+                    window.location.href = page;
+                });
+            });
+            const input = document.getElementById("search-input");
+            input.addEventListener("input", function () {
+                const query = this.value.toLowerCase();
+                if (query) {
+                    suggestions.classList.add("active");
+                    items.forEach((item) => {
+                        if (item.textContent.toLowerCase().includes(query)) {
+                            item.style.display = "block";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+                } else {
+                    suggestions.classList.remove("active");
+                }
+            });
+
+
+            document.addEventListener("click", function (e) {
+                if (!suggestions.contains(e.target) && e.target !== input) {
+                    suggestions.classList.remove("active");
+                }
+            });
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
