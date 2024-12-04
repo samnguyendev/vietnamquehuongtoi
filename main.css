@@ -161,7 +161,7 @@ label[for="check"] {
   height: 100%;
   text-align: center;
   line-height: 50px;
-  color: #ff676d;
+  color: #fc0050;
   font-size: 20px;
   border-radius: 50%;
   cursor: pointer;
@@ -169,7 +169,7 @@ label[for="check"] {
 }
 
 #check:checked ~ .search-box .icon {
-  background: #ff676d;
+  background: #fc0050;
   color: #fff;
   width: 60px;
   border-radius: 0 25px 25px 0;

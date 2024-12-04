@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Tour Du Lịch</title>
+    <link rel="icon" href="./files/logo.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body class="register-body">
+
+    <header class="header">
+        <a href="#" class="logo">TravelTO2</a>
+        <nav class="navbar">
+       
+        </nav>
+    </header>
+
+
+    <section class="registration">
+        <div class="register-form">
+            <h1>Booking <span>Here</span></h1>
+            <form action="" onsubmit="return validateform()">
+
+            <input type="text" name="myname1" placeholder="Họ và Tên" id="name" required>
+            <input type="email" name="myemail" placeholder="Email" id="" required>
+            <input type="tel" name="myphone" placeholder="Số Điện Thoại" id="phonenum" required>
+            <input type="number" name="myage" placeholder="Tuổi" id="" required>
+            <h4>Giới Tính</h4>
+            <input type="radio" name="mygender" id="" required> Nam &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            <input type="radio" name="mygender" id=""> Nữ
+            <h4>Ngày Khởi Hành</h4>
+            <input type="datetime-local" name="departuredate" id="" required>
+            <h4>Ngày Quay Lại</h4>
+            <input type="datetime-local" name="returndate" id="" required>
+            <h4>Điểm Đến</h4>
+            <input type="checkbox" name="td" id=""> Hà Nội &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td" id=""> Huế &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td" id=""> Nha Trang &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td" id=""> Đà Nẵng &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td" id=""> Phong Nha Kẻ Bàng &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td" id=""> Vịnh Hạ Long &nbsp; &nbsp; &nbsp; 
+            <input type="checkbox" name="td" id=""> Phố Cổ Hội An &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td" id=""> Quy Nhơn &nbsp; &nbsp; &nbsp;
+            <br> <br>
+            <h4>Gói Tour</h4>
+            <input type="radio" name="locations" id="loc1" required> Đồng Hành &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="locations" id="loc2"> Phổ Thông &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="locations" id="loc3"> Cao Cấp &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="locations" id="loc4"> Hạng Sang &nbsp; &nbsp; &nbsp;
+            <br> <br> 
+            <input type="checkbox" name="t&c" id="" checked required> Tôi chấp nhận Điều Khoản và Điều Kiện.
+            <br> <br> 
+            <input type="submit" value="Gửi" class="submitbtn">
+
+        </form>
+        </div>
+    </section>
+
+<!-- Footer -->
+
+<section class="footer">
+    <div class="foot">
+        <div class="footer-content">
+            
+            <div class="footlinks">
+                <h4>Liên Kết Nhanh</h4>
+                <ul>
+                    <li><a href="./register.html">Đăng Ký</a></li>
+                    <li><a href="./about.html">Về Chúng Tôi</a></li>
+                    <li><a href="./contact.html">Liên Hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="footlinks">
+                <h4>Kết Nối</h4>
+                <div class="social">
+                    <a href="https://www.facebook.com/mohd.rahil.blogger" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/mohdrahil101" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://www.twitter.com/mohdrahil101" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.linkedin.com/in/mohdrahil101" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://www.youtube.com/techdollarz" target="_blank"><i class='bx bxl-youtube' ></i></a>
+                    <a href="https://www.mohdrahil.wordpress.com" target="_blank"><i class='bx bxl-wordpress' ></i></a>
+                    <a href="https://www.github.com/mohdrahil101" target="_blank"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="end">
+        <p>Copyright © 2022 Firstflight Travels All Rights Reserved.<br>Website phát triển bởi: Mohd. Rahil</p>
+    </div>
+</section>
+
+<!-- Javascript -->
+<script>
+    function validateform(){ 
+        var tel=document.getElementById("phonenum").value;  
+
+        if(tel.length<10){  
+            alert("Số điện thoại phải có ít nhất 10 chữ số!");  
+            return false;  
+        } else if(isNaN(tel)){
+            alert("Số điện thoại không được bao gồm ký tự!");
+            return false;
+        }
+        return true;
+}  
+</script>
+
+</body>
+</html>
