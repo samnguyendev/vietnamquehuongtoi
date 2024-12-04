@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeVideoButton = document.getElementById('close-video');
 
     // URL của video YouTube
-    const youtubeURL = "https://www.youtube.com/embed/y8Mql-WNgL4?si=Qy6JmGMR_Fb38z4z"; 
+    const youtubeURL = "https://www.youtube.com/embed/y8Mql-WNgL4?si=zWVzAzscou86rCy5"; 
 
     // Thêm sự kiện click cho mỗi nút "See More"
     seeMoreButtons.forEach(button => {
